@@ -37,8 +37,7 @@ Khalil7.jpeg
 
 ## Live Demo
 
-🔗 **GitHub Pages:** *(add link here after enabling Pages)*  
-🔗 **Netlify:** *(add link after deploying to Netlify)*
+🔗 **GitHub Pages:** *(https://khalilmuhumed.github.io/advanced-css/)*
 
 ---
 
