@@ -1,0 +1,191 @@
+/* =========================================
+   Workshop 3 – Advanced CSS
+   Tasks: transitions, animations, pseudo-classes,
+          filters, pseudo-elements (+ table/form carryover)
+   ========================================= */
+
+/* ---- Base page setup (from WS02, simplified) ---- */
+:root {
+    --brand: #4caf50;
+    --ink: #222;
+    --ink-soft: #444;
+    --bg: #f7f9fb;
+    --card: #ffffff;
+    --border: #dcdfe4;
+    --muted: #f2f4f7;
+  }
+  
+  * { box-sizing: border-box; }
+  
+  body {
+    margin: 24px;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+  }
+  
+  h1, h2 { color: #0a2a6b; }
+  h1 { text-align: center; margin-bottom: 8px; }
+  p { color: var(--ink-soft); }
+  
+  hr { border: 0; border-top: 1px solid var(--border); margin: 24px 0; }
+  
+  /* =========================================
+     TASK 1: CSS TRANSITIONS
+     Button changes background color smoothly on hover
+     ========================================= */
+  .transition-button {
+    background-color: lightblue;     /* initial color */
+    color: #083344;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* smooth transition */
+  }
+  .transition-button:hover {
+    background-color: lightcoral;    /* hover color */
+  }
+  
+  /* =========================================
+     TASK 2: CSS ANIMATIONS
+     A box moving left<->right using @keyframes
+     ========================================= */
+  .animation-track {
+    /* a subtle track to visualize the movement area */
+    max-width: 240px;
+    height: 70px;
+    background: var(--muted);
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    position: relative;
+    padding: 8px;
+  }
+  
+  .animation-box {
+    width: 50px;
+    height: 50px;
+    background-color: lightgreen;
+    position: relative;
+    animation: move 2s infinite alternate; /* left->right->left... */
+    border-radius: 6px;
+  }
+  
+  /* keyframes: move between left: 0 and left: 100px */
+  @keyframes move {
+    from { left: 0; }
+    to   { left: 100px; }
+  }
+  
+  /* Respect users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .animation-box {
+      animation: none;
+    }
+  }
+  
+  /* =========================================
+     TASK 3: CSS PSEUDO-CLASSES
+     Alternate list item backgrounds with :nth-child
+     ========================================= */
+  .pseudo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 360px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .pseudo-list li {
+    padding: 10px 14px;
+  }
+  .pseudo-list li:nth-child(odd)  { background-color: #f6f6f6; }
+  .pseudo-list li:nth-child(even) { background-color: #ffffff; }
+  
+  /* =========================================
+     TASK 4: CSS FILTERS
+     Grayscale image returns to color on hover
+     ========================================= */
+  .filter-image {
+    display: block;
+    filter: grayscale(100%);                 /* start grayscale */
+    transition: filter 0.3s ease;            /* smooth change */
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+  .filter-image:hover {
+    filter: grayscale(0%);                   /* color on hover */
+  }
+  
+  /* =========================================
+     TASK 5: CSS PSEUDO-ELEMENTS
+     Decorative quote mark using ::before
+     ========================================= */
+  .quote {
+    position: relative;
+    padding: 16px 16px 16px 36px;  /* left padding for the quote mark */
+    font-style: italic;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    max-width: 560px;
+  }
+  .quote::before {
+    content: "“";                 /* decorative opening quote */
+    font-size: 40px;
+    line-height: 1;
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    color: #c7c7c7;
+    font-family: Georgia, 'Times New Roman', serif;
+  }
+  
+  /* ---- Carryover styling for table and form (tidy look) ---- */
+  .course-table {
+    width: 100%;
+    max-width: 720px;
+    border-collapse: collapse;
+    margin: 12px 0;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden; /* for rounded corners on header */
+  }
+  .course-table th, .course-table td {
+    border-bottom: 1px solid var(--border);
+    padding: 10px 12px;
+    text-align: left;
+  }
+  .course-table th { background: #f2f4f7; }
+  .course-table tr:last-child td { border-bottom: none; }
+  
+  .contact-form {
+    display: grid;
+    gap: 10px;
+    width: 320px;
+    margin: 16px 0;
+    background: #eaf4ff;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+  .contact-form input[type="text"],
+  .contact-form input[type="email"] {
+    padding: 8px 10px;
+    border: 1px solid #cdd3da;
+    border-radius: 6px;
+  }
+  .contact-form input[type="submit"] {
+    background: var(--brand);
+    color: #fff;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .contact-form input[type="submit"]:hover {
+    filter: brightness(0.95);
+  }  

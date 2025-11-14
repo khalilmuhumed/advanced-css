@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Workshop 3 – Advanced CSS</title>
+
+  <!-- Link external stylesheet for all advanced CSS (Task 1–5) -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header / carried over content from WS02 -->
+  <h1>Advanced CSS Playground</h1>
+  <p>
+    This page extends Workshop 2 by adding transitions, animations, pseudo-classes,
+    filters, and pseudo-elements.
+  </p>
+
+  <hr>
+
+  <!-- TASK 1: CSS Transitions -->
+  <!-- Button smoothly changes background color on hover -->
+  <section>
+    <h2>Task 1: Transition</h2>
+    <button class="transition-button">Hover me</button>
+  </section>
+
+  <hr>
+
+  <!-- TASK 2: CSS Animations -->
+  <!-- A small box moves left↔right continuously using keyframes -->
+  <section>
+    <h2>Task 2: Animation</h2>
+    <div class="animation-track">
+      <div class="animation-box" aria-label="Animated box"></div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- TASK 3: CSS Pseudo-classes -->
+  <!-- Every other list item gets a different background using :nth-child -->
+  <section>
+    <h2>Task 3: Pseudo-classes</h2>
+    <ul class="pseudo-list">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+      <li>Item 5</li>
+    </ul>
+  </section>
+
+  <hr>
+
+  <!-- TASK 4: CSS Filters -->
+  <!-- Image is grayscale by default; returns to color on hover -->
+  <section>
+    <h2>Task 4: Filter</h2>
+    <!-- Use your own image path; this assumes you copied images/ from WS02 -->
+    <img
+      src="images/Khalil7.jpeg"
+      alt="Sample portrait"
+      class="filter-image"
+      width="260"
+    />
+    <p><em>Hover the image to remove grayscale.</em></p>
+  </section>
+
+  <hr>
+
+  <!-- TASK 5: CSS Pseudo-elements -->
+  <!-- Decorative quote mark using ::before -->
+  <section>
+    <h2>Task 5: Pseudo-elements</h2>
+    <blockquote class="quote">
+      Growth comes from small, consistent improvements.
+    </blockquote>
+  </section>
+
+  <hr>
+
+  <!-- (Optional) Carried-over elements from WS01/WS02 to show continuity -->
+  <section>
+    <h2>Previous Workshop Elements</h2>
+
+    <!-- Table (styled in CSS) -->
+    <table class="course-table">
+      <tr>
+        <th>Course Name</th>
+        <th>Status</th>
+      </tr>
+      <tr>
+        <td>Web Development Basics</td>
+        <td>Completed</td>
+      </tr>
+      <tr>
+        <td>CSS Fundamentals</td>
+        <td>Completed</td>
+      </tr>
+      <tr>
+        <td>Advanced CSS</td>
+        <td>Ongoing</td>
+      </tr>
+    </table>
+
+    <!-- Simple form (styled in CSS) -->
+    <form class="contact-form">
+      <label for="name">Name</label>
+      <input id="name" type="text" placeholder="Your name" required>
+
+      <label for="email">Email</label>
+      <input id="email" type="email" placeholder="you@example.com" required>
+
+      <input type="submit" value="Submit">
+    </form>
+  </section>
+
+</body>
+</html>
