@@ -1,10 +1,8 @@
 /* =========================================
    Workshop 3 – Advanced CSS
-   Tasks: transitions, animations, pseudo-classes,
-          filters, pseudo-elements (+ table/form carryover)
    ========================================= */
 
-/* ---- Base page setup (from WS02, simplified) ---- */
+/* ---- Base page setup ---- */
 :root {
     --brand: #4caf50;
     --ink: #222;
@@ -32,7 +30,6 @@
   
   /* =========================================
      TASK 1: CSS TRANSITIONS
-     Button changes background color smoothly on hover
      ========================================= */
   .transition-button {
     background-color: lightblue;     /* initial color */
@@ -49,10 +46,8 @@
   
   /* =========================================
      TASK 2: CSS ANIMATIONS
-     A box moving left<->right using @keyframes
      ========================================= */
   .animation-track {
-    /* a subtle track to visualize the movement area */
     max-width: 240px;
     height: 70px;
     background: var(--muted);
@@ -67,7 +62,7 @@
     height: 50px;
     background-color: lightgreen;
     position: relative;
-    animation: move 2s infinite alternate; /* left->right->left... */
+    animation: move 2s infinite alternate; 
     border-radius: 6px;
   }
   
@@ -77,7 +72,6 @@
     to   { left: 100px; }
   }
   
-  /* Respect users who prefer reduced motion */
   @media (prefers-reduced-motion: reduce) {
     .animation-box {
       animation: none;
@@ -86,7 +80,6 @@
   
   /* =========================================
      TASK 3: CSS PSEUDO-CLASSES
-     Alternate list item backgrounds with :nth-child
      ========================================= */
   .pseudo-list {
     list-style: none;
@@ -106,26 +99,24 @@
   
   /* =========================================
      TASK 4: CSS FILTERS
-     Grayscale image returns to color on hover
      ========================================= */
   .filter-image {
     display: block;
-    filter: grayscale(100%);                 /* start grayscale */
-    transition: filter 0.3s ease;            /* smooth change */
+    filter: grayscale(100%);                 
+    transition: filter 0.3s ease;            
     border-radius: 10px;
     box-shadow: 0 1px 3px rgba(0,0,0,.06);
   }
   .filter-image:hover {
-    filter: grayscale(0%);                   /* color on hover */
+    filter: grayscale(0%);                   
   }
   
   /* =========================================
      TASK 5: CSS PSEUDO-ELEMENTS
-     Decorative quote mark using ::before
      ========================================= */
   .quote {
     position: relative;
-    padding: 16px 16px 16px 36px;  /* left padding for the quote mark */
+    padding: 16px 16px 16px 36px;  
     font-style: italic;
     background: var(--card);
     border: 1px solid var(--border);
@@ -133,7 +124,7 @@
     max-width: 560px;
   }
   .quote::before {
-    content: "“";                 /* decorative opening quote */
+    content: "“";        
     font-size: 40px;
     line-height: 1;
     position: absolute;
@@ -143,7 +134,6 @@
     font-family: Georgia, 'Times New Roman', serif;
   }
   
-  /* ---- Carryover styling for table and form (tidy look) ---- */
   .course-table {
     width: 100%;
     max-width: 720px;
@@ -152,7 +142,7 @@
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 8px;
-    overflow: hidden; /* for rounded corners on header */
+    overflow: hidden; 
   }
   .course-table th, .course-table td {
     border-bottom: 1px solid var(--border);
